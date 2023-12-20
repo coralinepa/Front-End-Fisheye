@@ -1,5 +1,5 @@
 function photographerTemplate(data) {
-  const { name, portrait, city, country, tagline, price } = data;
+  const { name, portrait, city, country, tagline, price, id } = data;
 
   const imgPath = `assets/photographers/profiles/${portrait}`;
 
@@ -8,7 +8,7 @@ function photographerTemplate(data) {
     const article = document.createElement("article");
 
     const linkElement = document.createElement("a");
-    linkElement.href = "index.html";
+    linkElement.href = `/photographer.html?id=${id}`;
     linkElement.classList.add("card-link");
 
     /* Create image */

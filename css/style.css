@@ -14,7 +14,16 @@ header {
   padding: 0 100px;
 }
 
-h1 {
+h2 a {
+  color: #901c1c;
+}
+
+h2 a:hover,
+a:focus {
+  color: #d3573c;
+}
+
+header h1 {
   color: #901c1c;
   font-size: 36px;
   font-weight: 400;
