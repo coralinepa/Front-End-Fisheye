@@ -1,17 +1,46 @@
 function photographerTemplate(data) {
-    const { name, portrait } = data;
+  const { name, portrait, city, country, tagline, price } = data;
 
-    const picture = `assets/photographers/${portrait}`;
+  const imgPath = `assets/photographers/profiles/${portrait}`;
 
-    function getUserCardDOM() {
-        const article = document.createElement( 'article' );
-        const img = document.createElement( 'img' );
-        img.setAttribute("src", picture)
-        const h2 = document.createElement( 'h2' );
-        h2.textContent = name;
-        article.appendChild(img);
-        article.appendChild(h2);
-        return (article);
-    }
-    return { name, picture, getUserCardDOM }
+  function getUserCardDOM() {
+    /* Create parent article */
+    const article = document.createElement("article");
+
+    const linkElement = document.createElement("a");
+    linkElement.href = "index.html";
+    linkElement.classList.add("card-link");
+
+    /* Create image */
+    const img = document.createElement("img");
+    img.setAttribute("src", imgPath);
+    img.setAttribute("alt", name);
+
+    /* Create Title */
+    const h2 = document.createElement("h2");
+    h2.textContent = name;
+
+    const locationElement = document.createElement("p");
+    locationElement.textContent = `${city}, ${country}`;
+    locationElement.classList.add("card-location");
+
+    const taglineElement = document.createElement("p");
+    taglineElement.textContent = tagline;
+    taglineElement.classList.add("card-text");
+
+    const priceElement = document.createElement("p");
+    priceElement.textContent = `${price} €/jour`;
+    priceElement.classList.add("card-price");
+
+    linkElement.appendChild(img);
+    linkElement.appendChild(h2);
+    article.appendChild(linkElement);
+    article.appendChild(locationElement);
+    article.appendChild(taglineElement);
+    article.appendChild(priceElement);
+
+    return article;
+  }
+
+  return { getUserCardDOM };
 }
