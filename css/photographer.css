@@ -2,13 +2,16 @@
   display: none;
 }
 
-.photograph-header {
+.photographer {
   background-color: #fafafa;
-  height: 300px;
-  margin: 0 100px;
+  padding: 56px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
-.contact_button {
+.photographer_contact {
   font-size: 20px;
   font-weight: bold;
   color: white;
@@ -19,6 +22,35 @@
   background-color: #901c1c;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.photographer_img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.medias {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 30px 60px;
+}
+
+.media {
+  width: 350px;
+  height: 300px;
+}
+
+.media img,
+.media video {
+  width: 350px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.media_figure {
+  all: unset;
 }
 
 .contact_button:hover,

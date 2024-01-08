@@ -10,31 +10,38 @@
 </head>
 
 <body>
-  <header>
-    <a href="index.html"><img src="assets/images/logo.png" class="logo" alt="Fisheye Home Page" /></a>
-  </header>
-  <main id="main">
-    <div class="photograph-header">
-      <button class="contact_button" onclick="displayModal()" aria-label="Contactez-moi">Contactez-moi</button>
-    </div>
-  </main>
-  <div id="contact_modal">
-    <div class="modal">
-      <header>
-        <h2>Contactez-moi</h2>
-        <img src="assets/icons/close.svg" onclick="closeModal()" alt="Fermer la modale" />
-      </header>
-      <form>
-        <div>
-          <label>Prénom</label>
-          <input />
-        </div>
-        <button class="contact_button" aria-label="Envoyer">Envoyer</button>
-      </form>
+  <div class="container">
+    <header class="header">
+      <a href="index.html"><img src="assets/images/logo.png" height="50" alt="Fisheye Home Page" /></a>
+    </header>
+    <main>
+      <section id="photographerHeader" class="photographer">
+        <button class="photographer_contact" onclick="displayModal()" aria-label="Contactez-moi">Contactez-moi</button>
+      </section>
+      <section id="medias" class="medias">
+      </section>
+      <aside id="photographerAside" class="photographer_aside">
+      </aside>
+    </main>
+
+    <div id="contact_modal">
+      <div class="modal">
+        <header>
+          <h2>Contactez-moi</h2>
+          <img src="assets/icons/close.svg" onclick="closeModal()" alt="Fermer la modale" />
+        </header>
+        <form>
+          <div>
+            <label>Prénom</label>
+            <input />
+          </div>
+          <button class="contact_button" aria-label="Envoyer">Envoyer</button>
+        </form>
+      </div>
     </div>
   </div>
-  <script src="/scripts/pages/photographer.js"></script>
-  <script src="/scripts/utils/contactForm.js"></script>
+  <script src="src/index.js" type="module"></script>
+
 </body>
 
 </html>
