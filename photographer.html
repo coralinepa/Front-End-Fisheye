@@ -10,34 +10,62 @@
 </head>
 
 <body>
-  <div class="container">
+  <div id="content" class="container">
     <header class="header">
       <a href="index.html"><img src="assets/images/logo.png" height="50" alt="Fisheye Home Page" /></a>
     </header>
     <main>
       <section id="photographerHeader" class="photographer">
-        <button class="photographer_contact" onclick="displayModal()" aria-label="Contactez-moi">Contactez-moi</button>
+        <button class="photographer_contact  modal-btn" id="photographerContact"
+          aria-label="Contactez-moi">Contactez-moi</button>
       </section>
       <section id="medias" class="medias">
       </section>
       <aside id="photographerAside" class="photographer_aside">
       </aside>
     </main>
+  </div>
 
-    <div id="contact_modal">
-      <div class="modal">
-        <header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" alt="Fermer la modale" />
-        </header>
-        <form>
-          <div>
-            <label>Prénom</label>
-            <input />
-          </div>
-          <button class="contact_button" aria-label="Envoyer">Envoyer</button>
-        </form>
-      </div>
+  <div id="contactModal" aria-hidden="true" role="dialog" aria-labelledby="contactModalTitle">
+    <div class="modal">
+      <header class="modal_header">
+        <h2 id="contactModalTitle" class="modal_header_title"></h2>
+        <button id="closeModal" class="close_button" type="button" aria-label="Fermer">&times;</button>
+      </header>
+
+      <form id="form" class="form" novalidate>
+        <div class="form_group">
+          <label id="firstNameLabel" for="firstName">Prénom</label>
+          <input class="text-control" aria-labelledby="firstNameLabel" type="text" id="firstName" name="firstName"
+            placeholder="Ex. : Coraline" aria-required="true" aria-describedby="firstNameError" required />
+          <span class="form_error" id="firstNameError" aria-live="assertive">
+          </span>
+        </div>
+        <div class="form_group">
+          <label id="lastNameLabel" for="lastName">Nom</label>
+          <input class="text-control" aria-labelledby="lastNameLabel" type="text" id="lastName" name="lastName"
+            placeholder="Ex. : Parreau" aria-required="true" aria-describedby="lastNameError" required>
+          <span class="form_error" id="lastNameError" aria-live="assertive">
+          </span>
+        </div>
+        <div class="form_group">
+          <label id="emailLabel" for="email">E-mail</label>
+          <input class="text-control" type="email" id="email" name="email" aria-labelledby="emailLabel"
+            placeholder="Ex. : coraline.parreau@openclassrooms.com" aria-required="true" aria-describedby="emailError"
+            required />
+          <span class="form_error" id="emailError" aria-live="assertive">
+          </span>
+        </div>
+        <div class="form_group">
+          <label id="messageLabel" for="message">Message</label>
+          <textarea class="text-control" aria-labelledby="messageLabel" id="message" name="message"
+            placeholder="Ex. : Je souhaite vous contacter pour avoir un devis." aria-required="true"
+            aria-describedby="messageError" required></textarea>
+          <span class="form_error" id="messageError" aria-live="assertive">
+          </span>
+        </div>
+        <button type="submit" class="contact_button" aria-label="Envoyer">Envoyer</button>
+      </form>
     </div>
   </div>
   <script src="src/index.js" type="module"></script>

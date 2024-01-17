@@ -18,17 +18,9 @@ class PhotographerHeader {
       <img src=${imgPath} class="photographer_img" alt=${name} />
     `;
 
-    const parser = new DOMParser();
-    const profileElement = parser.parseFromString(
-      profileHtml,
-      "text/html"
-    ).body;
-
-    const imgElement = parser.parseFromString(imgHtml, "text/html").body;
-
     const headerElement = document.getElementById("photographerHeader");
-    headerElement.prepend(profileElement);
-    headerElement.append(imgElement);
+    headerElement.insertAdjacentHTML("afterbegin", profileHtml);
+    headerElement.insertAdjacentHTML("beforeend", imgHtml);
   }
 }
 
