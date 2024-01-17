@@ -16,7 +16,7 @@ class PhotographerList {
             </a>
               <p class="card_location">${city}, ${country}</p>
               <p class="card_text">${tagline}</p>
-              <p class="card_price">${price} €/jour</p>
+              <p class="card_price">${price}€ /jour</p>
         </article>
       `;
       })
