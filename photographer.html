@@ -40,11 +40,11 @@
             placeholder="Ex. : Coraline" aria-required="true" aria-describedby="firstNameError" required />
           <span class="form_error" id="firstNameError" aria-live="assertive">
           </span>
-        </div>
+        </div>ia-labelledby="lastNameLa
         <div class="form_group">
           <label id="lastNameLabel" for="lastName">Nom</label>
-          <input class="text-control" aria-labelledby="lastNameLabel" type="text" id="lastName" name="lastName"
-            placeholder="Ex. : Parreau" aria-required="true" aria-describedby="lastNameError" required>
+          <input class="text-control" arbel" type="text" id="lastName" name="lastName" placeholder="Ex. : Parreau"
+            aria-required="true" aria-describedby="lastNameError" required>
           <span class="form_error" id="lastNameError" aria-live="assertive">
           </span>
         </div>
@@ -66,6 +66,14 @@
         </div>
         <button type="submit" class="contact_button" aria-label="Envoyer">Envoyer</button>
       </form>
+    </div>
+  </div>
+  <div id="lightboxModal" class="lightbox_modal" aria-hidden="true" role="dialog">
+    <div class="lightbox_content">
+      <span id="lightboxClose" class="lightbox_close" aria-label="Fermer" tabindex="0">&times;</span>
+      <button id="previousMedia" class=".lightbox_previous" aria-label="Media précédent" tabindex="0">&#10094;</button>
+      <img id="lightboxImage" src="" alt="" class="lightbox_image">
+      <button id="nextMedia" class="lightbox_next" aria-label="Media suivant" tabindex="0">&#10095;</button>
     </div>
   </div>
   <script src="src/index.js" type="module"></script>

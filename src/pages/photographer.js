@@ -5,6 +5,7 @@ import MediaFactory from "../factories/MediaFactory.js";
 import PhotographerAsideView from "../views/PhotographerAside.js";
 
 import { showModal, closeModal } from "../utils/modal.js";
+import Lightbox from "../utils/Lightbox.js";
 import validateForm from "../utils/form.js";
 
 async function getPhotographer(id) {
@@ -45,6 +46,9 @@ async function renderPhotographer() {
   headerView.render();
   mediaListView.render();
   asideView.render();
+
+  /* On instancie la lightbox */
+  const lightbox = new Lightbox(Medias);
 
   /* On ajoute le nom du photographe sur le formulaire de contact */
   const contactName = document.getElementById("contactModalTitle");
