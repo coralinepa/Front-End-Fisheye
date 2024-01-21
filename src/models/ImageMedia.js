@@ -7,5 +7,4 @@ class ImageMedia extends Media {
     this.src = `assets/photographers/${data.photographerId}/${data.image}`;
   }
 }
-
 export default ImageMedia;

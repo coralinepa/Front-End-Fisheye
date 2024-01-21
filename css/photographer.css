@@ -208,8 +208,10 @@ form textarea {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.lightbox_image {
+.lightbox_media video,
+.lightbox_media img {
   display: block;
   margin: auto;
-  max-height: 80vh;
+  width: 1050px;
+  height: 900px;
 }
