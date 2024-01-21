@@ -10,7 +10,7 @@ class PhotographerList {
           photographer;
         return `
           <article>
-            <a href=/photographer.html?id=${id} class="card_link">
+            <a href="photographer.html?id=${id}" class="card_link">
               <img src=assets/photographers/profiles/${portrait} class="card_img" alt=${name}/>
               <h2 class="card_title">${name}</h2>
             </a>

@@ -10,26 +10,28 @@ class PhotographerMediaList {
     const html = this.medias
       .map((media) => {
         if (media instanceof ImageMedia) {
-          const { photographerId, image, title } = media;
+          const { title, id, src } = media;
           return `
             <article class='media'>
               <figure class="media_figure">
-                <img src="assets/photographers/${photographerId}/${image}" alt="${title}">
+                <a class="media_link" href="#" data-media=${id}>
+                  <img src="${src}" alt="${title}">
+                </a>
                 <figcaption>${title}</figcaption>
               </figure>
             </article>
           `;
         } else if (media instanceof VideoMedia) {
-          const { photographerId, video, title } = media;
+          const { title, id, src } = media;
           return `
-            
-          <article class="media">
-            <figure class="media_figure">
-              <video src="assets/photographers/${photographerId}/${video}" type="video/mp4"></video>
-              <figcaption>${title}</figcaption>
-            </figure>
-          </article>
-            
+            <article class="media">
+              <figure class="media_figure">
+                <a class="media_link" href="#" data-media=${id}>
+                  <video src="${src}"  type="video/mp4"></video> 
+                </a>
+                <figcaption>${title}</figcaption>
+              </figure>
+            </article> 
           `;
         }
       })
