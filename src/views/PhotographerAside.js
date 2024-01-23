@@ -9,7 +9,8 @@ class PhotographerAside {
     const { price } = this.photographer;
 
     const html = `
-        <span class="photographer_likes">${likes}</span>
+        <span id="photographerLikes" class="photographer_likes">${likes}</span>
+        <span class="photographer_likes_icon fa-solid fa-heart" aria-hidden="true"></span>
         <span class="photographer_price">${price}€ /jour</span>
       `;
 

@@ -10,6 +10,16 @@ body {
   padding: 0 100px;
 }
 
+#main {
+  margin-top: 140px;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .header {
   display: flex;
   flex-direction: row;
