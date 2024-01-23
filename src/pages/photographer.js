@@ -6,6 +6,7 @@ import PhotographerAsideView from "../views/PhotographerAside.js";
 
 import { showModal, closeModal } from "../utils/modal.js";
 import Lightbox from "../utils/Lightbox.js";
+import Likes from "../utils/Likes.js";
 import validateForm from "../utils/form.js";
 
 async function getPhotographer(id) {
@@ -49,6 +50,9 @@ async function renderPhotographer() {
 
   /* On instancie la lightbox */
   const lightbox = new Lightbox(Medias);
+
+  /* On instancie la gestion des likes */
+  const likes = new Likes(Medias);
 
   /* On ajoute le nom du photographe sur le formulaire de contact */
   const contactName = document.getElementById("contactModalTitle");

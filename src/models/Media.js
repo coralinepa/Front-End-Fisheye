@@ -6,6 +6,7 @@ class Media {
     this.likes = data.likes;
     this.date = data.date;
     this.price = data.price;
+    this.liked = false;
   }
 }
 

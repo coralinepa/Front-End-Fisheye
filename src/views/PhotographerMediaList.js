@@ -10,7 +10,7 @@ class PhotographerMediaList {
     const html = this.medias
       .map((media) => {
         if (media instanceof ImageMedia) {
-          const { title, id, src } = media;
+          const { title, id, src, likes } = media;
           return `
             <article class='media'>
               <figure class="media_figure">
@@ -19,10 +19,17 @@ class PhotographerMediaList {
                 </a>
                 <figcaption>${title}</figcaption>
               </figure>
+              <div class="media_likes">
+                <span class="media_likes_mention">${likes}</span>
+                <button class="media_likes_button">
+                <span class="media_likes_icon fa-regular fa-heart" aria-hidden="true"></span>
+                </button>
+                
+              </div>
             </article>
           `;
         } else if (media instanceof VideoMedia) {
-          const { title, id, src } = media;
+          const { title, id, src, likes } = media;
           return `
             <article class="media">
               <figure class="media_figure">
@@ -31,6 +38,13 @@ class PhotographerMediaList {
                 </a>
                 <figcaption>${title}</figcaption>
               </figure>
+              <div class="media_likes">
+                <span class="media_likes_mention">${likes}</span>
+                <button class="media_likes_button">
+                <span class="media_likes_icon fa-regular fa-heart" aria-hidden="true"></span>
+                </button>
+                
+              </div>
             </article> 
           `;
         }
