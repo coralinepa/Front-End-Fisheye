@@ -3,15 +3,14 @@ class Likes {
     this.medias = medias;
     this.index = 0;
     this.media;
+    this.mediaLikesButtonElements;
+  }
 
-    this.totalLikesElement = document.getElementById("photographerLikes");
-
-    this.mediaLikesMentionElements = document.querySelectorAll(
-      ".media_likes_mention"
-    );
+  init() {
     this.mediaLikesButtonElements = document.querySelectorAll(
       ".media_likes_button"
     );
+
     this.mediaLikesButtonElements.forEach((mediaLikesButtonElement, index) => {
       mediaLikesButtonElement.addEventListener("click", (event) => {
         event.preventDefault();
@@ -33,24 +32,28 @@ class Likes {
   }
 
   updateMediaLikesRender() {
-    const mediaLikesMentionElement = this.mediaLikesMentionElements[this.index];
+    const mediaLikesMentionElements = document.querySelectorAll(
+      ".media_likes_mention"
+    );
+    const mediaLikesMentionElement = mediaLikesMentionElements[this.index];
     mediaLikesMentionElement.innerHTML = this.media.likes;
   }
 
   updateTotalLikesRender() {
+    const totalLikesElement = document.getElementById("photographerLikes");
     const totalLikes = this.medias.reduce((acc, { likes }) => acc + likes, 0);
-    this.totalLikesElement.textContent = `${totalLikes}`;
+    totalLikesElement.textContent = `${totalLikes}`;
   }
 
   updateLikeButtonStyle() {
     const mediaLikesButtonElement = this.mediaLikesButtonElements[this.index];
     if (this.media.liked) {
-      mediaLikesButtonElement.innerHTML = `<button class="media_likes_button liked">
-        <span class="media_likes_icon fa-solid fa-heart" aria-hidden="true"></span>
-        </button>`;
+      mediaLikesButtonElement.innerHTML = `<button role="button" type="button" aria-label="Cliques pour ajouter un like" class="media_likes_button liked">
+        <span class="media_likes_icon fa-solid fa-heart" aria-label="likes" aria-hidden="true"></span>
+       </button>`;
     } else {
       mediaLikesButtonElement.innerHTML = `<button class="media_likes_button">
-      <span class="media_likes_icon fa-regular fa-heart" aria-hidden="true"></span>
+         <span class="media_likes_icon fa-regular fa-heart" aria-label="likes" aria-hidden="true"></span>
       </button>`;
     }
   }

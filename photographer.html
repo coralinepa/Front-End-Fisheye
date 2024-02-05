@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
   <link href="css/style.css" rel="stylesheet" type="text/css" />
@@ -13,12 +13,43 @@
 <body>
   <div id="content" class="container">
     <header class="header">
-      <a href="index.html"><img src="assets/images/logo.png" height="50" alt="Fisheye Home Page" /></a>
+      <a href="index.html"><img src="assets/images/logo.png" height="50" alt="Fisheye Home Page"
+          aria-label="Retourner sur la page d'accueil" /></a>
     </header>
     <main>
-      <section id="photographerHeader" class="photographer">
-        <button class="photographer_contact  modal-btn" id="photographerContact"
-          aria-label="Contactez-moi">Contactez-moi</button>
+      <section id="photographerHeader" class="photographer" role="region">
+        <button class="photographer_contact" role="button" id="photographerContact" aria-label="Contact me"
+          aria-labelledby="photographerContact">Contactez-moi</button>
+      </section>
+
+      <section class="dropdown" role="region">
+        <label id="dropdownTitle" class="dropdown_title" role="button" tabindex="0" aria-haspopup="true"
+          aria-expanded="false" aria-label="trier par" aria-labelledby="dropdownTitle">Trier
+          par</label>
+
+
+        <div id="dropdownSelect" class="dropdown_select">
+          <button class="dropdown_button" type="button" id="sortButton" aria-haspopup="listbox"
+            aria-expanded="false"><span id="currentSort">Popularité</span>
+            <span class="fa-solid fa-chevron-up" aria-hidden="true"></span></button>
+          <ul class="dropdown_listbox" id="sortOptions" role="listbox" tabindex="-1" aria-labelledby="sortButton">
+            <li class="dropdown_option" id="menuItemPopularity" data-value="likes" role="option" aria-selected="true"
+              tabindex="0" style="display: none;" aria-hidden="true">
+              Popularité
+            </li>
+
+            <li class="dropdown_option" id="menuItemDate" data-value="date" role="option" aria-selected="false"
+              tabindex="0">
+              Date
+            </li>
+
+            <li class="dropdown_option" id="menuItemTitle" data-value="title" role="option" aria-selected="false"
+              tabindex="0">
+              Titre
+            </li>
+          </ul>
+        </div>
+
       </section>
       <section id="medias" class="medias">
       </section>
@@ -31,7 +62,7 @@
     <div class="modal">
       <header class="modal_header">
         <h2 id="contactModalTitle" class="modal_header_title"></h2>
-        <button id="closeModal" class="close_button" type="button" aria-label="Fermer">&times;</button>
+        <button id="closeModal" class="close_button" type="button" role="button" aria-label="Fermer">&times;</button>
       </header>
 
       <form id="form" class="form" novalidate>
@@ -44,7 +75,7 @@
         </div>
         <div class="form_group">
           <label id="lastNameLabel" for="lastName">Nom</label>
-          <input class="text-control" arbel" type="text" id="lastName" name="lastName" placeholder="Ex. : Parreau"
+          <input class="text-control" type="text" id="lastName" name="lastName" placeholder="Ex. : Parreau"
             aria-required="true" aria-describedby="lastNameError" required>
           <span class="form_error" id="lastNameError" aria-live="assertive">
           </span>
@@ -72,8 +103,8 @@
   <div id="lightboxModal" class="lightbox_modal" aria-hidden="true" role="dialog">
     <div class="lightbox_content">
       <span id="lightboxClose" class="lightbox_close" aria-label="Fermer" tabindex="0">&times;</span>
-      <button id="previousMedia" class="lightbox_previous" aria-label="Media précédent" tabindex="0">&#10094;</button>
-      <button id="nextMedia" class="lightbox_next" aria-label="Media suivant" tabindex="0">&#10095;</button>
+      <button id="previousMedia" class="lightbox_previous" aria-label="Media précédent" tabindex="0">&lt;</button>
+      <button id="nextMedia" class="lightbox_next" aria-label="Media suivant" tabindex="0"> &gt;</button>
       <figure id="lightboxMedia" class="lightbox_media">
       </figure>
     </div>
@@ -81,6 +112,7 @@
   <script src="src/index.js" type="module"></script>
   <script src="https://kit.fontawesome.com/a8a9b95856.js" crossorigin="anonymous"></script>
 
+  <footer></footer>
 </body>
 
 </html>

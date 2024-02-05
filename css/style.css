@@ -82,17 +82,17 @@ p {
 
 .card_location {
   color: #901c1c;
-  font-size: 13px;
+  font-size: 18px;
 }
 
 .card_text {
   color: #000;
-  font-size: 10px;
+  font-size: 18px;
 }
 
 .card_price {
   color: #757575;
-  font-size: 9px;
+  font-size: 16px;
 }
 
 .card_link {
@@ -100,4 +100,8 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.card_link:focus {
+  color: #d3573c;
 }

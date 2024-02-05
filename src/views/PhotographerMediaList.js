@@ -14,14 +14,14 @@ class PhotographerMediaList {
           return `
             <article class='media'>
               <figure class="media_figure">
-                <a class="media_link" href="#" data-media=${id}>
+                <a class="media_link" href="#" role="link" aria-label="${title}, closeup view" data-media=${id}>
                   <img src="${src}" alt="${title}">
                 </a>
                 <figcaption>${title}</figcaption>
               </figure>
               <div class="media_likes">
                 <span class="media_likes_mention">${likes}</span>
-                <button class="media_likes_button">
+                <button role="button" type="button" aria-label="Cliques pour ajouter un like" class="media_likes_button">
                 <span class="media_likes_icon fa-regular fa-heart" aria-hidden="true"></span>
                 </button>
                 
@@ -33,17 +33,16 @@ class PhotographerMediaList {
           return `
             <article class="media">
               <figure class="media_figure">
-                <a class="media_link" href="#" data-media=${id}>
-                  <video src="${src}"  type="video/mp4"></video> 
+                <a class="media_link" href="#" role="link" aria-label="Vue large" data-media=${id}>
+                  <video src="${src}"  alt="${title}" type="video/mp4"></video> 
                 </a>
                 <figcaption>${title}</figcaption>
               </figure>
               <div class="media_likes">
                 <span class="media_likes_mention">${likes}</span>
-                <button class="media_likes_button">
+                <button role="button" type="button" aria-label="Cliques pour ajouter un like" class="media_likes_button">
                 <span class="media_likes_icon fa-regular fa-heart" aria-hidden="true"></span>
                 </button>
-                
               </div>
             </article> 
           `;

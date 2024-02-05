@@ -5,8 +5,10 @@ import MediaFactory from "../factories/MediaFactory.js";
 import PhotographerAsideView from "../views/PhotographerAside.js";
 
 import { showModal, closeModal } from "../utils/modal.js";
-import Lightbox from "../utils/Lightbox.js";
-import Likes from "../utils/Likes.js";
+import Lightbox from "../services/Lightbox.js";
+import Likes from "../services/Likes.js";
+import FilterMediaController from "../controllers/FilterMedia.js";
+
 import validateForm from "../utils/form.js";
 
 async function getPhotographer(id) {
@@ -39,14 +41,14 @@ async function renderPhotographer() {
   const Photographer = new PhotographerModel(restPhotographer);
 
   /* On instancie nos différentes vues (header, liste des médias, aside) */
-  const headerView = new PhotographerHeaderView(Photographer);
-  const mediaListView = new PhotographerMediaListView(Medias);
-  const asideView = new PhotographerAsideView(Medias, Photographer);
+  const HeaderView = new PhotographerHeaderView(Photographer);
+  const MediaListView = new PhotographerMediaListView(Medias);
+  const AsideView = new PhotographerAsideView(Medias, Photographer);
 
   /* On affiche nos différentes vues dans le DOM */
-  headerView.render();
-  mediaListView.render();
-  asideView.render();
+  HeaderView.render();
+  MediaListView.render();
+  AsideView.render();
 
   /* On instancie la lightbox */
   const lightbox = new Lightbox(Medias);
@@ -54,10 +56,13 @@ async function renderPhotographer() {
   /* On instancie la gestion des likes */
   const likes = new Likes(Medias);
 
+  // Créez une instance de la classe MediaGallery avec les données des médias
+  new FilterMediaController(Medias, MediaListView, lightbox, likes);
+
   /* On ajoute le nom du photographe sur le formulaire de contact */
   const contactName = document.getElementById("contactModalTitle");
   contactName.innerHTML = `
-  Contactez-moi
+  Contactez-moi </br>
   ${Photographer.name}
 `;
 
