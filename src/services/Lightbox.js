@@ -8,11 +8,13 @@ class Lightbox {
     this.lightboxModalElement = document.getElementById("lightboxModal");
     this.lightboxMediaElement = document.getElementById("lightboxMedia");
     this.lightboxCloseElement = document.getElementById("lightboxClose");
-    this.mediaLinkElements = document.querySelectorAll(".media_link");
     this.nextMediaElement = document.getElementById("nextMedia");
     this.previousMediaElement = document.getElementById("previousMedia");
+  }
 
-    this.mediaLinkElements.forEach((mediaLinkElement, index) => {
+  init() {
+    const mediaLinkElements = document.querySelectorAll(".media_link");
+    mediaLinkElements.forEach((mediaLinkElement, index) => {
       mediaLinkElement.addEventListener("click", (event) => {
         event.preventDefault();
         this.open(index);

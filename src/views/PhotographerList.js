@@ -9,9 +9,9 @@ class PhotographerList {
         const { name, portrait, id, city, country, tagline, price } =
           photographer;
         return `
-          <article>
-            <a href="photographer.html?id=${id}" class="card_link">
-              <img src=assets/photographers/profiles/${portrait} class="card_img" alt=${name}/>
+          <article role="article">
+            <a href="photographer.html?id=${id}" class="card_link" role="link" aria-labelledby="cardTitle">
+              <img src=assets/photographers/profiles/${portrait} class="card_img" alt=${name} role="img" aria-labelledby="cardTitle"/>
               <h2 class="card_title">${name}</h2>
             </a>
               <p class="card_location">${city}, ${country}</p>
