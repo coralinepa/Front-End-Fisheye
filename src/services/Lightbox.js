@@ -49,13 +49,18 @@ class Lightbox {
 
   next() {
     this.currentIndex = (this.currentIndex + 1) % this.medias.length;
-    this.open(this.currentIndex);
+    const media = this.medias[this.currentIndex];
+    const html = this.getMediaHtml(media);
+    this.lightboxMediaElement.innerHTML = html;
   }
 
   previous() {
     this.currentIndex =
       (this.currentIndex - 1 + this.medias.length) % this.medias.length;
-    this.open(this.currentIndex);
+
+    const media = this.medias[this.currentIndex];
+    const html = this.getMediaHtml(media);
+    this.lightboxMediaElement.innerHTML = html;
   }
 
   handleKeydown = (event) => {

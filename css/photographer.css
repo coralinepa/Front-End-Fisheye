@@ -7,6 +7,10 @@
   margin-bottom: 20px;
   min-height: 312px;
 }
+.container {
+  opacity: 0;
+  animation: fade 1s ease-in-out forwards;
+}
 
 .photographer_contact {
   font-size: 20px;
@@ -71,6 +75,12 @@
   width: 350px;
   height: 300px;
   object-fit: cover;
+  border-radius: 5px;
+}
+
+.media video {
+  object-fit: cover;
+  object-position: center;
 }
 
 .media_figure {
@@ -216,22 +226,27 @@ form textarea {
   background-color: #fff;
   position: relative;
   margin: 10% auto;
-  padding: 23px;
   border: 1px solid transparent;
   border-radius: 5px;
-  width: 45%;
   display: flex;
+  padding: 24px 19px 62px 19px;
   align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  height: 70%;
+  max-height: 1000px;
 }
 
 .lightbox_close {
   position: absolute;
   top: 0;
-  right: 22px;
+  right: 12px;
   color: #901c1c;
   font-size: 72px;
   font-weight: bold;
   cursor: pointer;
+  background-color: transparent;
+  border: none;
 }
 
 .lightbox_previous,
@@ -242,7 +257,7 @@ form textarea {
   color: white;
   font-size: 72px;
   transition: 0.6s ease;
-  border-color: transparent;
+  border: none;
   background-color: transparent;
 }
 
@@ -261,23 +276,37 @@ form textarea {
   color: #901c1c;
 }
 
+.lightbox_media {
+  background-color: #fff;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox_media video {
+  object-position: center;
+  object-fit: cover;
+}
+
 .lightbox_media video,
 .lightbox_media img {
-  display: block;
-  margin: auto;
-  width: 100%;
-  height: 900px;
+  width: 85%;
+  height: 100%;
+}
+
+.lightbox_media img {
   object-fit: cover;
 }
 
 .lightbox_modal figcaption {
   color: #901c1c;
   font-size: 24px;
-  padding-top: 12px;
-}
-
-.lightbox_media {
-  background-color: #fff;
+  left: 66px;
+  bottom: -38px;
+  position: absolute;
 }
 
 .photographer_aside {
@@ -353,7 +382,6 @@ form textarea {
 .open .dropdown_listbox {
   display: block;
   background-color: #901c1c;
-  border-radius: 5px;
   width: 170px;
 }
 
@@ -369,6 +397,8 @@ form textarea {
   background-color: #901c1c;
   border-radius: 5px;
   position: relative;
+  margin-top: -7px;
+  padding-bottom: 22px;
 }
 
 .dropdown_option::after {
@@ -383,4 +413,15 @@ form textarea {
 .dropdown_option:hover {
   background-color: #db8876;
   color: black;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

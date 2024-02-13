@@ -2,7 +2,7 @@
 <html lang="fr">
 
 <head>
-  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <link href="css/style.css" rel="stylesheet" type="text/css">
   <meta charset="utf-8">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
@@ -14,23 +14,23 @@
   <div id="content" class="container">
     <header class="header">
       <a href="index.html"><img src="assets/images/logo.png" height="50" alt="Fisheye Home Page"
-          aria-label="Retourner sur la page d'accueil" /></a>
+          aria-label="Retourner sur la page d'accueil"></a>
     </header>
     <main>
-      <section id="photographerHeader" class="photographer" role="region">
-        <button class="photographer_contact" role="button" id="photographerContact" aria-label="Contact me"
+      <div id="photographerHeader" class="photographer">
+        <button class="photographer_contact" id="photographerContact" aria-label="Contact me"
           aria-labelledby="photographerContact">Contactez-moi</button>
-      </section>
+      </div>
 
-      <section class="dropdown" role="region">
-        <label id="dropdownTitle" class="dropdown_title" role="button" tabindex="0" aria-haspopup="true"
-          aria-expanded="false" aria-label="trier par" aria-labelledby="dropdownTitle">Trier
+      <div class="dropdown">
+        <label id="dropdownTitle" class="dropdown_title" tabindex="0" aria-label="trier par"
+          aria-labelledby="dropdownTitle">Trier
           par</label>
 
 
         <div id="dropdownSelect" class="dropdown_select">
-          <button class="dropdown_button" type="button" id="sortButton" aria-haspopup="listbox"
-            aria-expanded="false"><span id="currentSort">Popularité</span>
+          <button class="dropdown_button" type="button" id="sortButton" aria-haspopup="true" aria-expanded="false"><span
+              id="currentSort">Popularité</span>
             <span class="fa-solid fa-chevron-up" aria-hidden="true"></span></button>
           <ul class="dropdown_listbox" id="sortOptions" role="listbox" tabindex="-1" aria-labelledby="sortButton">
             <li class="dropdown_option" id="menuItemPopularity" data-value="likes" role="option" aria-selected="true"
@@ -50,9 +50,9 @@
           </ul>
         </div>
 
-      </section>
-      <section id="medias" class="medias">
-      </section>
+      </div>
+      <div id="medias" class="medias">
+      </div>
       <aside id="photographerAside" class="photographer_aside">
       </aside>
     </main>
@@ -62,14 +62,14 @@
     <div class="modal">
       <header class="modal_header">
         <h2 id="contactModalTitle" class="modal_header_title"></h2>
-        <button id="closeModal" class="close_button" type="button" role="button" aria-label="Fermer">&times;</button>
+        <button id="closeModal" class="close_button" type="button" aria-label="Fermer">&times;</button>
       </header>
 
       <form id="form" class="form" novalidate>
         <div class="form_group">
           <label id="firstNameLabel" for="firstName">Prénom</label>
           <input class="text-control" aria-labelledby="firstNameLabel" type="text" id="firstName" name="firstName"
-            placeholder="Ex. : Coraline" aria-required="true" aria-describedby="firstNameError" required />
+            placeholder="Ex. : Coraline" aria-required="true" aria-describedby="firstNameError" required>
           <span class="form_error" id="firstNameError" aria-live="assertive">
           </span>
         </div>
@@ -84,7 +84,8 @@
           <label id="emailLabel" for="email">E-mail</label>
           <input class="text-control" type="email" id="email" name="email" aria-labelledby="emailLabel"
             placeholder="Ex. : coraline.parreau@openclassrooms.com" aria-required="true" aria-describedby="emailError"
-            required />
+            required>
+
           <span class="form_error" id="emailError" aria-live="assertive">
           </span>
         </div>
@@ -102,7 +103,7 @@
   </div>
   <div id="lightboxModal" class="lightbox_modal" aria-hidden="true" role="dialog">
     <div class="lightbox_content">
-      <span id="lightboxClose" class="lightbox_close" aria-label="Fermer" tabindex="0">&times;</span>
+      <button id="lightboxClose" class="lightbox_close" aria-label="Fermer la lightbox" tabindex="0">&times;</button>
       <button id="previousMedia" class="lightbox_previous" aria-label="Media précédent" tabindex="0">&lt;</button>
       <button id="nextMedia" class="lightbox_next" aria-label="Media suivant" tabindex="0"> &gt;</button>
       <figure id="lightboxMedia" class="lightbox_media">
