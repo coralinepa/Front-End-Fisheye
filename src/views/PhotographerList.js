@@ -1,3 +1,5 @@
+/*constructeur de la classe prend un tableau d'objets photographers en tant que paramètre et l'assigne à la propriété photographers de l'instance créée.*/
+
 class PhotographerList {
   constructor(photographers) {
     this.photographers = photographers;
