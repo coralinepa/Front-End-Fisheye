@@ -11,12 +11,18 @@ import FilterMediaController from "../controllers/FilterMedia.js";
 
 import validateForm from "../utils/form.js";
 
+/*Rendre la page d'un photographe avec toutes les informations et médias associés*/
+
+/*Récupère les données du photographe à partir d'un fichier JSON.
+Elle prend l'id du photographe comme paramètre*/
 async function getPhotographer(id) {
+  /*puis utilise une requête fetch pour obtenir les données*/
   const response = await fetch("data/photographers.json");
   const { photographers = [], medias = [] } = await response.json();
   const photographer = photographers.find(
     (photographer) => photographer.id === id
   );
+  /*Elle filtre ensuite les données pour obtenir le photographe avec l'id correspondant ainsi que les médias*/
   const photographerMedias = medias.filter(
     (media) => media.photographerId === photographer.id
   );
@@ -24,12 +30,13 @@ async function getPhotographer(id) {
   return { ...photographer, medias: photographerMedias };
 }
 
+/*resposnable de l'affichage des infos du photographe dans le DOM*/
 async function renderPhotographer() {
   /* On récupère l'id du photographe grace aux searchParams de l'url */
   const urlSearchParams = new URLSearchParams(window.location.search);
   const photographerId = Number(urlSearchParams.get("id"));
 
-  /* On requête le photographer et ses médias */
+  /* On requête le photographe et ses médias pour récupérer les données */
   const { medias: mediasData, ...restPhotographer } = await getPhotographer(
     photographerId
   );
@@ -37,7 +44,7 @@ async function renderPhotographer() {
   /* On instancie un vidéo ou une photo en fonction du type de média grace à la factory */
   const Medias = mediasData.map((media) => MediaFactory.createMedia(media));
 
-  /* On instancie un photographe */
+  /* On instancie un objet représentant un photographe à partir des données obtenues*/
   const Photographer = new PhotographerModel(restPhotographer);
 
   /* On instancie nos différentes vues (header, liste des médias, aside) */

@@ -191,6 +191,7 @@ form textarea {
   height: 68px;
   border: none;
   border-radius: 5px;
+  font-size: 18px;
 }
 
 .contact_button {

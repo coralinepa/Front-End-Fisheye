@@ -1,5 +1,8 @@
+/*fonction appelée lorsque l'utilisateur appuie sur le clavier, elle prend event en paramètre qui représente l'événement de frappe au clavier*/
 function handleEscapeKey(event) {
+  /*la focntion vérifie si la touche appuyée est la touche "escape" en comparant event.key à la chaine de caractère escape.*/
   if (event.key === "Escape") {
+    /*si la touche escape est cliquer, la focntion appelle closemodal pour fermer la modale de contact*/
     closeModal();
   }
 }
