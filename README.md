@@ -33,3 +33,4 @@ Page photographe avec :
 Installation
 ```git clone https://github.com/coralinepa/Front-End-Fisheye.git```
 ```cd Front-End-Fisheye```
+Ensuite, ouvre index.html dans ton navigateur ou utilise Live Server.
