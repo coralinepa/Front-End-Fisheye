@@ -1,39 +1,35 @@
-# FishEye
-FishEye un projet réalisé dans le cadre du programme de formation Développeur Front-end JavaScript React.
+##Fisheye
 
-## Objectif
-Créer une plateforme accessible permettant aux photographes de présenter leurs travaux, développer en HTML, CSS, JavaScript, en mettant l’accent sur :
+Fisheye est une plateforme permettant à des photographes indépendants de présenter leur travail de manière professionnelle.
+Ce projet met l'accent sur la navigation clavier, l’accessibilité (ARIA, HTML sémantique) et la modularité JavaScript, sans aucun framework.
 
-- La navigation clavier
-- L’accessibilité (ARIA, éléments sémantiques)
-- Une interface responsive
-- Une lightbox pour visionner les médias
-- Un formulaire de contact avec modal
+Compétences mises en œuvre
+- Développer une interface web en JavaScript natif
+- Structurer une application avec des composants modulaires
+- Appliquer les principes d’accessibilité web
+- Gérer le DOM et les événements sans bibliothèque externe
+- Implémenter une interface utilisateur conforme à une maquette
 
-📌 Fonctionnalités
+Fonctionnalités principales
+Page d’accueil listant les photographes avec :
+- Nom, localisation, tags, tarif
+- Filtres par tags
 
-Page d’accueil : 
-- affiche les photographes (nom, localisation, tarif, tags, photo)
-- Filtrage par tags : clic sur un tag pour filtrer la liste
+Page photographe avec :
+- Galerie de médias (photos/vidéos)
+- Système de likes dynamiques
+- Tri par popularité, date ou titre
+- Lightbox avec navigation clavier
+- Formulaire de contact en modal
+- Navigation 100% clavier + rôles ARIA + gestion du focus
 
-Page photographe :
-- Galerie de photos et vidéos (miniatures)
-- Tri des médias (popularité, date, titre)
-- Système de likes : clic pour augmenter, total dynamique
-- Lightbox avec navigation entre médias
-- Contact : bouton “Contacter”, modal avec champ nom, email et message ; soumission affichée en console
+ Technologies utilisées
+- HTML / CSS
+-JavaScript 
+- JSON 
+- Git & GitHub
+- Accessibilité : WAI-ARIA, AChecker, WAVE
 
-✅ Accessibilité & Responsivité
-- Sémantique HTML (balises <header>, <main>, <nav>, <button>, etc.)
-- Composants accessibles (ARIA) et gestion du focus dans les modales
-- Navigation au clavier optimisée
-- Design responsive adapté aux formats mobiles/tablettes/desktop
-
-💡 Technologies
-- HTML, CSS (ou SCSS)
-- JavaScript 
-
-📥 Installation
-- Télécharger le dépôt (Clone ou ZIP)
-- Ouvrir index.html dans le navigateur (ou utiliser un serveur local)
-- Modifier HTML/CSS/JS, puis rafraîchir la page pour voir les changements
+Installation
+```git clone https://github.com/coralinepa/Front-End-Fisheye.git```
+```cd Front-End-Fisheye```
